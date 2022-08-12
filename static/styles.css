@@ -1,24 +1,32 @@
-.custom { 
-	background: rgba(72, 70, 70, 0.655);
+.custom, .trans { 
     backdrop-filter: blur(5px);
     z-index: 5; /* Make sure the image is behind the navbar, to show the effect */
 }
 
-#logo {
-    width: 40px;
+.custom {
+	background: rgba(72, 70, 70, 0.655);
+}
+
+.logo-bottom, .logo-top {
+	width: 40px;
     height: 40px;
 }
 
-header {
-    background: linear-gradient(-45deg, rgb(88, 88, 88), #c4c4c4, rgb(72, 70, 70), #252525);
+.logo-top {
+	content: url("web.png");
+}
+
+.logo-bottom {
+	content: url("web_invert.png");
+}
+
+header, .trans {
+	background: linear-gradient(-45deg, rgb(88, 88, 88), #c4c4c4, rgb(72, 70, 70), #252525);
     background-size: 400% 400%;
     animation: gradient 15s ease infinite;
 }
 
 .trans {
-	background: linear-gradient(-45deg, rgba(88, 88, 88, 0.655), rgba(196, 196, 196, 0.655), rgba(72, 70, 70, 0.655), rgba(37, 37, 37, 0.655));
-	background-size: 400% 400%;
-    animation: gradient 15s ease infinite;
 	backdrop-filter: blur(5px);
 	z-index: 5;
 }
@@ -34,6 +42,20 @@ header {
 		background-position: 0% 50%;
 	}
 }
+
+/* CHANGE BETWEEN BLACK AND WHITE */
+
+.custom-toggler.navbar-toggler {
+	border-color: white;
+}
+/* Setting the stroke to green using rgb values (0, 128, 0) */
+  
+.custom-toggler .navbar-toggler-icon{
+	background-image: url(
+"data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 255, 255, 0.8)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
+
+
 
 
 #banner {

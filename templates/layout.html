@@ -22,8 +22,8 @@
     <header>
         <nav id="navbar" class="navbar navbar-expand-lg shadow-sm fixed-top navbar-light">
             <div class="container-fluid">
-                <a class="navbar-brand" href="#"><img id="logo" src="static/web.png"></a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <a class="navbar-brand" href="#"><img id="logo" class="logo-top" style="width: 40px; height: 40px;"/></a>
+                <button class="custom-toggler navbar-toggler white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
@@ -96,14 +96,15 @@
             var scroll = $(window).scrollTop();
             
             if (scroll >= scrollPoint) {
-                $("#logo").attr("src", "static/web_invert.png")
+                logo.removeClass("logo-top")
+                logo.addClass("logo-bottom")
                 nav.addClass("trans")
             }
             else if (scroll <= scrollPoint) {
-                $("#logo").attr("src", "static/web.png")
-                nav.removeClass("bg-dark trans")
+                logo.removeClass("logo-bottom")
+                $("#logo").addClass("logo-top")
+                nav.removeClass("bg-dark ")
             }
-            
         });   
 
         $(".a").on("click", function()
